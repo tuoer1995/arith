@@ -29,14 +29,14 @@ public abstract class BaseSort<T> {
      */
     public static void each(Comparable[] arrays,int i,int j) {
         Comparable temp = arrays[i];
-        arrays[j] =  arrays[i];
-        arrays[i] = temp;
+        arrays[i] =  arrays[j];
+        arrays[j] = temp;
     }
 
     public static void show(Comparable[] arrays) {
        Assert.notEmpty(arrays,"数组不能为空");
         for (Comparable c :arrays) {
-            System.out.println(c.toString());
+            System.out.print(c.toString()+ " ");
         }
     }
 

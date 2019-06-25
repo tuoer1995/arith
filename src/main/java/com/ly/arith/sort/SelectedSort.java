@@ -8,14 +8,14 @@ import org.springframework.util.Assert;
  * @author: tuoer
  * @date： 2019/6/25
  */
-public class SelectedSort<T> extends BaseSort<T> {
+public class SelectedSort<T> extends BaseSort <T> {
     @Override
-    public void sort(Comparable[] arrays) {
-        Assert.notEmpty(arrays,"数组不能为空");
-        for (int i = 0; i < arrays.length-1; i++) {
-            for (int j = i+1; j < arrays.length; j++) {
-                if(less(arrays[j],arrays[i])) {
-                    each(arrays,i,j);
+    public void sort( Comparable[] arrays ) {
+        Assert.notEmpty ( arrays , "数组不能为空" );
+        for (int i = 0; i < arrays.length; i++) {
+            for (int j = i + 1; j < arrays.length; j++) {
+                if ( less ( arrays[j] , arrays[i] ) ) {
+                    each ( arrays , i , j );
                 }
             }
 
@@ -23,12 +23,10 @@ public class SelectedSort<T> extends BaseSort<T> {
 
     }
 
-    public static void main(String[] args) {
-        Integer[] arrays = {4,5,3,8};
-
-        SelectedSort s = new SelectedSort();
-        s.sort(arrays);
-
-        show(arrays);
+    public static void main( String[] args ) {
+        Integer[] arrays = {4 , 5 , 3 , 7 , 1 , 2 , 2 , 3 , 3 , 3 , 8};
+        SelectedSort s = new SelectedSort ();
+        s.sort ( arrays );
+        show ( arrays );
     }
 }
